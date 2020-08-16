@@ -74,6 +74,7 @@ class Game:
             self.btn_3["image"]==str(self.cross_img) and self.btn_5["image"]==str(self.cross_img) and self.btn_7["image"]==str(self.cross_img) or\
             self.btn_1["image"]==str(self.cross_img) and self.btn_5["image"]==str(self.cross_img) and self.btn_9["image"]==str(self.cross_img):
             self.restart_game(string="Player 1 Winner")
+            
         elif self.btn_1["image"]==str(self.circle_img) and self.btn_2["image"]==str(self.circle_img) and self.btn_3["image"]==str(self.circle_img) or\
             self.btn_4["image"]==str(self.circle_img) and self.btn_5["image"]==str(self.circle_img) and self.btn_6["image"]==str(self.circle_img) or\
             self.btn_7["image"]==str(self.circle_img) and self.btn_8["image"]==str(self.circle_img) and self.btn_9["image"]==str(self.circle_img) or\
@@ -83,6 +84,7 @@ class Game:
             self.btn_3["image"]==str(self.circle_img) and self.btn_5["image"]==str(self.circle_img) and self.btn_7["image"]==str(self.circle_img) or\
             self.btn_1["image"]==str(self.circle_img) and self.btn_5["image"]==str(self.circle_img) and self.btn_9["image"]==str(self.circle_img):
             self.restart_game(string="Player 2 Winner")
+            
         elif self.i==10:
             self.restart_game(string="Tie Game")
 
