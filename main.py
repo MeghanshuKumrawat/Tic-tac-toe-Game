@@ -80,6 +80,7 @@ class Game:
             mixer.music.load("winner.mp3")
             mixer.music.play()
             self.restart_game(string="Player 1 Winner")
+            
         elif self.btn_1["image"]==str(self.circle_img) and self.btn_2["image"]==str(self.circle_img) and self.btn_3["image"]==str(self.circle_img) or\
             self.btn_4["image"]==str(self.circle_img) and self.btn_5["image"]==str(self.circle_img) and self.btn_6["image"]==str(self.circle_img) or\
             self.btn_7["image"]==str(self.circle_img) and self.btn_8["image"]==str(self.circle_img) and self.btn_9["image"]==str(self.circle_img) or\
@@ -91,6 +92,7 @@ class Game:
             mixer.music.load("winner.mp3")
             mixer.music.play()
             self.restart_game(string="Player 2 Winner")
+            
         elif self.i==10:
             mixer.music.load("loose.mp3")
             mixer.music.play()
