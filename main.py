@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+from pygame import mixer
 
 class Game:
     def __init__(self, root):
@@ -7,6 +8,7 @@ class Game:
         self.root.title("Tic Tac Toe")
         self.root.geometry("250x300")
         self.root.maxsize(250, 300)
+        mixer.init()
         self.cross_img = PhotoImage(file="img\\cross.png")
         self.circle_img = PhotoImage(file="img\\circle.png")
         self.bg_img = PhotoImage(file="img\\bg.png")
@@ -50,6 +52,8 @@ class Game:
 
     def move(self, btn):
         if btn not in self.btn_list:
+            mixer.music.load("tik.mp3")
+            mixer.music.play()
             if self.i%2==1:
                 btn.config(image=self.cross_img)
                 self.player_1.config(bg="white")
@@ -73,6 +77,8 @@ class Game:
             self.btn_3["image"]==str(self.cross_img) and self.btn_6["image"]==str(self.cross_img) and self.btn_9["image"]==str(self.cross_img) or\
             self.btn_3["image"]==str(self.cross_img) and self.btn_5["image"]==str(self.cross_img) and self.btn_7["image"]==str(self.cross_img) or\
             self.btn_1["image"]==str(self.cross_img) and self.btn_5["image"]==str(self.cross_img) and self.btn_9["image"]==str(self.cross_img):
+            mixer.music.load("winner.mp3")
+            mixer.music.play()
             self.restart_game(string="Player 1 Winner")
         elif self.btn_1["image"]==str(self.circle_img) and self.btn_2["image"]==str(self.circle_img) and self.btn_3["image"]==str(self.circle_img) or\
             self.btn_4["image"]==str(self.circle_img) and self.btn_5["image"]==str(self.circle_img) and self.btn_6["image"]==str(self.circle_img) or\
@@ -82,8 +88,12 @@ class Game:
             self.btn_3["image"]==str(self.circle_img) and self.btn_6["image"]==str(self.circle_img) and self.btn_9["image"]==str(self.circle_img) or\
             self.btn_3["image"]==str(self.circle_img) and self.btn_5["image"]==str(self.circle_img) and self.btn_7["image"]==str(self.circle_img) or\
             self.btn_1["image"]==str(self.circle_img) and self.btn_5["image"]==str(self.circle_img) and self.btn_9["image"]==str(self.circle_img):
+            mixer.music.load("winner.mp3")
+            mixer.music.play()
             self.restart_game(string="Player 2 Winner")
         elif self.i==10:
+            mixer.music.load("loose.mp3")
+            mixer.music.play()
             self.restart_game(string="Tie Game")
 
     def restart_game(self, string):
